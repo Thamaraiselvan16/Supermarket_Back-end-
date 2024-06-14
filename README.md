@@ -48,6 +48,13 @@
 
 10. **Set the FLASK_APP Environment Variable**
     ```bash
+    setx SECRET_KEY "my_secret_key"
+    setx DATABASE_URL "mysql+pymysql://user:password@localhost/supermarket_db" #need to change
+    setx EMAIL "your_mail@gmail.com"
+    setx EMAIL_PASSWORD "my-email-password"
+    setx MANAGER_EMAIL "manager_mail@gmail.com"
+
+
     set FLASK_APP=run.py  # On Windows
     export FLASK_APP=run.py  # On macOS/Linux
     ```

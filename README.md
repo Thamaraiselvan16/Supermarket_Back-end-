@@ -73,3 +73,57 @@
         EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD', 'your_email_password')
         MANAGER_EMAIL = os.getenv('MANAGER_EMAIL', 'manager_mail@gmail.com')
     ```
+
+14. **Create Database**
+```python
+CREATE DATABASE supermarket_db;
+
+USE supermarket_db;
+
+CREATE TABLE User_details (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    sex ENUM('Male', 'Female', 'Other'),
+    contact_number VARCHAR(15),
+    email_id VARCHAR(100) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE Store_user (
+    store_user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    sex ENUM('Male', 'Female', 'Other'),
+    contact_number VARCHAR(15),
+    email_id VARCHAR(100) UNIQUE,
+    password VARCHAR(255),
+    designation ENUM('Manager', 'Sales Man')
+);
+
+CREATE TABLE Products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100),
+    rate DECIMAL(10, 2),
+    stock INT
+);
+
+CREATE TABLE Purchase (
+    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    email_id VARCHAR(100),
+    item VARCHAR(100),
+    quantity INT,
+    rate DECIMAL(10, 2),
+    date_of_purchase DATE,
+    FOREIGN KEY (user_id) REFERENCES User_details(user_id),
+    FOREIGN KEY (email_id) REFERENCES User_details(email_id)
+);
+
+SELECT * FROM User_details;
+SELECT * FROM Store_user;
+SELECT * FROM Products;
+SELECT * FROM Purchase;
+ ```

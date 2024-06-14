@@ -4,7 +4,7 @@
 
 1. **Download or Clone the Repository**
     ```bash
-    git clone https://github.com/Thamaraiselvan16/Supermarket_Back-end.git
+    git clone https://github.com/Thamaraiselvan16/Supermarket_Back-end-.git
     cd Supermarket_Back-end
     ```
 

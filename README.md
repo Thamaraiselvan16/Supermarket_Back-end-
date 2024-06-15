@@ -17,7 +17,7 @@
 
 4. **Navigate to the Correct Directory**
     ```bash
-    cd Supermarket_Back-end
+    cd Supermarket_Back-end-
     ```
 
 5. **Install Virtualenv**
